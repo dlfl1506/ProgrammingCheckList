@@ -1,0 +1,76 @@
+package sms;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class SmsSendTest extends JFrame {
+	private JLabel lb1, lb2;
+	private JTextField tf1, tf2;
+	private JButton btn1, btn2;
+	private Container c;
+	private JPanel panel1;
+	private GridLayout gl;
+
+	public void initObject() {
+		lb1 = new JLabel("전화번호");
+		lb2 = new JLabel("메시지");
+
+		tf1 = new JTextField();
+		tf2 = new JTextField();
+
+		btn1 = new JButton("전송");
+		btn1 = new JButton("초기화");
+
+		panel1 = new JPanel();
+		gl = new GridLayout(3, 2);
+		c =getContentPane();
+	}
+
+	public void initSetting() {
+		setSize(500, 500);
+		setTitle("문자전송");
+		panel1.setLayout(gl);
+		
+		
+		setVisible(true);
+	}
+
+	public void initBatch() {
+		panel1.add(lb1);
+		panel1.add(tf1);
+		panel1.add(lb2);
+		panel1.add(tf2);
+		panel1.add(btn1);
+		panel1.add(btn2);
+		
+		c.add(panel1);
+	
+		
+	}
+	
+	public SmsSendTest() {
+
+		initObject();
+		
+		initSetting();
+		
+		initBatch();
+
+	}
+
+	
+
+	public static void main(String[] args) {
+		new SmsSendTest();
+	}
+
+}
